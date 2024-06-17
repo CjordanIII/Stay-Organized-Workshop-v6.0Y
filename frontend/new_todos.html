@@ -25,8 +25,12 @@
       <a href="./todos.html">todo</a>
     </nav>
     <main>
-      <form>
+      <form id="new_todo">
         <ul>
+          <!-- <li> -->
+          <!-- <label for="userid">User id</label> -->
+          <input type="number" name="userid" value="1" hidden />
+          <!-- </li> -->
           <li>
             <label for="category">Category</label>
             <select name="category" id="category">
@@ -35,8 +39,7 @@
           </li>
           <li>
             <label for="description">description</label>
-            <textarea name="description" id="description" rows="4" cols="50">
-            </textarea>
+            <textarea name="description" id="description" cols="50"> </textarea>
           </li>
           <li>
             <label for="deadline">deadline</label>
@@ -51,7 +54,12 @@
               <option value="High">High</option>
             </select>
           </li>
+          <li>
+            <label for="completed">completed</label>
+            <input name="completed" type="checkbox" id="completed" />
+          </li>
         </ul>
+
         <button type="submit">Submit</button>
       </form>
     </main>
