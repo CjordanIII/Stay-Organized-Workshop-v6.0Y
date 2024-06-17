@@ -5,8 +5,8 @@ const catagoryDropDown = document.querySelector("#category");
 async function handleCategories() {
   try {
     let res = await getCategories();
+    //   adds none as a selection
     res.unshift({ id: 0, name: "none" });
-
     newTodoCatagoryDropDown(catagoryDropDown, res);
   } catch (error) {
     console.log(error);
