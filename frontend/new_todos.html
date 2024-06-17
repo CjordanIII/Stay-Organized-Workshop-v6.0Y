@@ -24,5 +24,35 @@
       <a href="./new_todos.html">new todo</a>
       <a href="./todos.html">todo</a>
     </nav>
+    <main>
+      <form>
+        <ul>
+          <li>
+            <label for="category">Category</label>
+            <select name="category" id="category">
+              <!-- injected js -->
+            </select>
+          </li>
+          <li>
+            <label for="description">description</label>
+            <textarea name="description" id="description" rows="4" cols="50">
+            </textarea>
+          </li>
+          <li>
+            <label for="deadline">deadline</label>
+            <input name="deadline" type="date" id="deadline" />
+          </li>
+          <li>
+            <label for="priority">priority</label>
+            <select name="priority" id="priority">
+              <option value="none">none</option>
+              <option value="Low">Low</option>
+              <option value="Medium">Medium</option>
+              <option value="High">High</option>
+            </select>
+          </li>
+        </ul>
+      </form>
+    </main>
   </body>
 </html>

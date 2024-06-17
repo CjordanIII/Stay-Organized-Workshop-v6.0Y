@@ -8,12 +8,12 @@ async function createTodo(obj) {
     let res = await fetch(`${baseRoute}/api/todos`, {
       method: "POST",
       body: {
-        userid: "1",
-        category: "Personal Task",
-        description: "Finish studying for Eng 211 exam",
-        deadline: "2022-12-15",
-        priority: "Medium",
-        completed: "",
+        userid: userid,
+        category: category,
+        description: description,
+        deadline: deadline,
+        priority: priority,
+        completed: completed,
       },
     });
 
@@ -22,5 +22,14 @@ async function createTodo(obj) {
     return error;
   }
 }
+async function getCategories() {
+  try {
+    let res = await fetch(`${baseRoute}/api/categories`);
+    res = res.json();
+    return res;
+  } catch (error) {
+    return error;
+  }
+}
 
-export { createTodo };
+export { createTodo, getCategories };
