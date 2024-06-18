@@ -1,32 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hello world</title>
-    <!-- Bootstrap -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-      crossorigin="anonymous"
-    />
-    <script
-      defer
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-      crossorigin="anonymous"
-    ></script>
-    <script defer src="./scripts/index.js" type="module"></script>
-  </head>
 
-  <body>
-    <nav>
-      <a href="./index.html">Home</a>
-      <a href="./new_todos.html">new todo</a>
-      <a href="./todos.html">todo</a>
-    </nav>
-   
 
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="styles/images/jello.jpg" type="image/x-icon" />
+  <title>Task Jello | Home</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lemon&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+  <!-- Custom CSS -->
+  
+
+<style>
+  #lemon-regular {
+    font-family: "Lemon", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 50px;
+    letter-spacing: -2px;
+    text-indent:-12%;
+  }
+
+  #oswald-text {
+    font-family: "Oswald", sans-serif;
+    font-size: 45px;
+    font-weight: 300;
+    font-style: normal;
+    text-indent:10px ;
+  }
+
+  body{
+
+    background-color: rgb(109, 194, 109);
+
+  }
+
+  #goto{
+    color: white;
+  }
+
+  .container{
+    color: white;
+  }
+
+  body{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+footer{
+    margin-top: auto;
+}
+</style>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark border-bottom border-body">
+    <div class="container-fluid">
+      <a class="navbar-brand" id="oswald-text" href="index.html">Task</a> <a class="navbar-brand" id="lemon-regular"
+        href="index.html">Jello</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="todos.html">Track Your Tasks</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="new_todos.html">Create A New Task</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+ 
+  <!-- Hero Section -->
+  <section class="hero-section text-center py-5">
+    <div class="container">
+      <h1 class="display-4 mb-4">Welcome to <text id="lemon-regular" style="font-size: 55px"><a id="oswald-text" style="font-size: 50px ; margin-right: 3px;">Task</a>Jello</text></h1>
+      <p class="lead"><b> The ultimate tool for keeping track of everyday tasks with just a little <i>wiggle</i> room.</b></p>
+      <a href="todos.html" class="btn btn-success btn-lg mt-3">View Your Tasks</a>
+    </div>
+  </section>
+
+
+  <section class=" d-flex py-5 container justify-content-evenly">
+
+     <!-- Card  -->
+  <div class="card" style="width: 18rem;">
+    <img class="card-img-top" src="styles/images/tasks.jpg" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">Log In to Task Jello</h5>
+      <p class="card-text">Create an account and start your Task Jello team today.</p>
+      <center><a href="#" class="btn btn-success">Log In</a><br>
+      <a href="#" style="color: darkgreen; font-size: small;">Create an Account</a></center>
+    </div>
+  </div>
+
+  <div class="card" style="width: 18rem;">
+    <img class="card-img-top" src="styles/images/organize.jpg" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">Create Tasks for a Team</h5>
+      <p class="card-text">Easily add new tasks on the go to ensure nothing slips through the cracks.</p>
+      <center><a href="new_todos.html" class="btn btn-success">Create A Task</a><br></center>
+      
+    </div>
+  </div>
+
+  <div class="card" style="width: 18rem;">
+    <img class="card-img-top" src="styles/images/200619162441-list-making-stock.jpg" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">View Your Team Tasks</h5>
+      <p class="card-text">There's always a little wiggle room to achieving your goals.</p>
+      <center><a href="todos.html" class="btn btn-success">View Tasks</a><br></center>
+      
+    </div>
+  </div>
+</section>
+  
+
+
+  <!-- Footer -->
+  <footer class="footer bg-dark text-light text-center py-3">
+    <div class="container">
+      <p>&copy; 2024 Task Jello. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+</body>
+
+
 </html>
