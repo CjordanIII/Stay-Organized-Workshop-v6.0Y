@@ -9,24 +9,34 @@ window.onload = () => {
 
     let theUsersDropdown = document.querySelector("#theUsers");
 
-    //  theUsersDropdown.addEventListener("change", viewUserData);
+    theUsersDropdown.addEventListener("change", viewTask);
 
     //create dropdown to grab users name / id and pull up their info.. use the users id to get info. 
 
 }
 
 
-// async function viewUserData() {
 
-//     let theUsersDropdown = document.querySelector("#theUsers");
+async function viewTask() {
 
-//     let users = await
+    
+    let theTasks = document.querySelector("#theTasks"); //where the stuff will show in div/html
 
-// }
-
-
+    let usersTodoData = await todoData(); //wait for json data to pullup in function todoData
 
 
+    console.log(usersTodoData);
+
+  theTasks.innerHTML= 
+
+    `
+       <p> Category: ${usersTodoData.category}</p>
+       <p> Description: ${usersTodoData.description}</p>
+        <p>Deadline: ${usersTodoData.deadline}</p>
+       <p> Priority: ${usersTodoData.priority}</p>
+        <p> Completed: ${usersTodoData.completed}</p>`
+        
+ }
 
 async function populateDropdown() {
     let theUsersDropdown = document.querySelector("#theUsers");
@@ -75,3 +85,26 @@ async function usersList() {
 
 
 
+   const todoData = async (id) => {
+    let theUsersDropdown = document.querySelector("#theUsers").value
+        //try catch for error handling
+        try {
+    
+            //make a fetch (GET) request to get the data from the API
+            let response = await fetch("http://localhost:8083/api/todos/" + theUsersDropdown,
+            
+            );
+    
+            //turn those todo in to something we can work with
+            let todos = await response.json();
+    
+            //put the todo in the console
+            return todos
+        } catch (err) {
+    
+            //what the hell happened
+            console.log("something went south")
+    
+        }
+
+}
