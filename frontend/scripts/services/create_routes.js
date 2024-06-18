@@ -29,11 +29,21 @@ async function createTodo(obj) {
 async function getCategories() {
   try {
     let res = await fetch(`${baseRoute}/api/categories`);
-    res = res.json();
-    return res;
+
+    return res.json();
   } catch (error) {
     return error;
   }
 }
 
-export { createTodo, getCategories };
+async function getUsers() {
+  try {
+    let res = await fetch(`${baseRoute}/api/users`);
+
+    return res.json();
+  } catch (error) {
+    return error;
+  }
+}
+
+export { createTodo, getCategories, getUsers };

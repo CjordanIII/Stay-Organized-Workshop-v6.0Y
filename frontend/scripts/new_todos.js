@@ -1,5 +1,10 @@
-import { newTodoCatagoryDropDown } from "./helpers/dorpdown.js";
-import { createTodo, getCategories } from "./services/create_routes.js";
+import { newTodoCatagoryDropDown, usersDropdown } from "./helpers/dorpdown.js";
+import {
+  createTodo,
+  getCategories,
+  getUsers,
+} from "./services/create_routes.js";
+const usersDropDown = document.querySelector("#userid");
 const newTodoForm = document.querySelector("#new_todo");
 const catagoryDropDown = document.querySelector("#category");
 async function handleCategories() {
@@ -14,6 +19,19 @@ async function handleCategories() {
 }
 
 handleCategories();
+
+async function handleUsers() {
+  try {
+    let res = await getUsers();
+    res.unshift({ id: 0, name: "choose a user", username: "Choose a user" });
+    console.log(res);
+    usersDropdown(usersDropDown, res);
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+handleUsers();
 
 newTodoForm.addEventListener("submit", (e) => {
   e.preventDefault();
